@@ -1,11 +1,12 @@
 {
   "name": "zero-request",
   "version": "0.0.1",
-  "description" : "zero module",
-  "zero" : {
-    "dependencies" : {
-      "bus" : "zero-bus^0.0.1"
-    }
+  "description": "zero module",
+  "zero": {
+    "dependencies": {
+      "bus": "^0.0.1"
+    },
+    "name": "request"
   },
-  "author" : "jiamiu"
+  "author": "jiamiu"
 }
