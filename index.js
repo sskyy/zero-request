@@ -6,7 +6,7 @@ var _ = require('lodash'),
 function standardRoute(url) {
   var result = { url: null, method: null}
 
-  if (/^(GET|POST|DELETE|PUT)\s+(\/[\w\*]+|\*)/.test(url)) {
+  if (/^(GET|POST|DELETE|PUT)\s+(\/[\w\*]*|\*)/.test(url)) {
     var urlArray = url.split(/\s+/)
     result.method = urlArray[0].toLowerCase()
     result.url = urlArray[1]
@@ -156,7 +156,7 @@ var request = {
     route.handler = handler
     handler.function = standardCallback( handler.function, root.dep.bus.bus )
 
-    //save it! other module may need
+    //do not bind to express route here, save it! other module may need to adjust order.
     root.routes.push( route, route.handler.name,  route.handler.order  )
   },
 
