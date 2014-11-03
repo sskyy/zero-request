@@ -1,7 +1,7 @@
 var _ = require('lodash'),
   Promise = require('bluebird'),
   path = require('path'),
-  orderedCollection = require(path.join(process.cwd(),'system/core/orderedCollection'))
+  linkedList = require(path.join(process.cwd(),'system/core/linkedList'))
 
 function standardRoute(url) {
   var result = { url: null, method: null}
@@ -75,7 +75,7 @@ function standardCallback(callback, bus, fnForEachReq) {
 var request = {
   deps: ['bus'],
   responds: [],
-  routes : new orderedCollection,
+  routes : new linkedList,
   /**
    * 扩展依赖request的模块。为其提供增强后的 express 的 route 功能。
    * @param {object} module 被扩展的模块，将读取该模块的 `route` 属性。该属性必须是一个对象，键名为要处理的 url，键值为路由处理函数。
