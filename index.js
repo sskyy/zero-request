@@ -115,7 +115,11 @@ var request = {
       reqAgent.path = route.url
       reqAgent.isFirstAgent = !route.req.isAgent
       reqAgent.isAgent = true
-      reqAgent.bus = bus._origin.fork() //fork a new bus!!!
+      //reqAgent.bus = bus._origin.fork() //fork a new bus, or the promise will never end!!!
+      reqAgent.bus = snapshot
+      //set fire result right
+      reqAgent.bus.$$results = {}
+
       reqAgent.__proto__ = route.req.__proto__
 
       resAgent.status = function(){return this}
@@ -125,12 +129,17 @@ var request = {
       resAgent.render = _.noop
       resAgent.isAgent = true
       resAgent.__proto__ = route.res.__proto__
-      return request.triggerRequest( route.url, route.method, reqAgent, resAgent).then(function(){
-        //merge $$traceStack back
-        snapshot.$$traceRef.stack = reqAgent.bus.$$traceRoot.stack
-        _.merge(snapshot.$$data, reqAgent.bus.$$data )
-      }).catch(function(err){
-      })
+      //return request.triggerRequest( route.url, route.method, reqAgent, resAgent).then(function(){
+      //  //merge $$traceStack back
+      //  //snapshot.$$traceRef.stack = reqAgent.bus.$$traceRoot.stack
+      //  //_.merge(snapshot.$$data, reqAgent.bus.$$data )
+      //})
+      //return request.triggerRequest( route.url, route.method, reqAgent, resAgent).then(function(){
+      //  console.log("finished!!!!!!!!!!")
+      //}).catch(function(err){
+      //  console.log( err,"<===========")
+      //})
+      return request.triggerRequest( route.url, route.method, reqAgent, resAgent)
     }
   },
   //api
