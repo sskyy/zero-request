@@ -1,6 +1,6 @@
 # zero-request #
 
-This module user let you use basic express router functions.
+Provide enhanced express router functions for relier module.
 
 ## Usage ##
 

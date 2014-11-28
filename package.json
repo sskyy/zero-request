@@ -1,7 +1,10 @@
 {
   "name": "zero-request",
-  "version": "0.0.9",
-  "description": "zero module",
+  "version": "0.0.10",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "Provide enhanced express router functions for relier module.",
   "zero": {
     "dependencies": {
       "bus": "^0.0.1"
