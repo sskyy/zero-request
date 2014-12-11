@@ -26,7 +26,7 @@ function standardCallback(callback, bus, fnForEachReq) {
     req.bus = req.bus || bus.fork()
     req.bus._started || req.bus.start()
     req.bus.session = function(name, data){
-      if( !data ) return req.session[name]
+      if( data === undefined ) return req.session[name]
       return req.session[name] = data
     }
 
