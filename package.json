@@ -1,6 +1,6 @@
 {
   "name": "zero-request",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "keywords": [
     "zero module"
   ],
@@ -8,7 +8,7 @@
   "author": "jiamiu",
   "dependencies": {
     "koa-body": "~1.2.1",
-    "koa-router": "~5.1.2",
+    "koa-router": "~5.2.0",
     "roof-bus": "~0.1.0"
   }
 }
