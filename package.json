@@ -1,15 +1,14 @@
 {
   "name": "zero-request",
-  "version": "0.0.11",
+  "version": "0.2.1",
   "keywords": [
     "zero module"
   ],
   "description": "Provide enhanced express router functions for relier module.",
-  "zero": {
-    "dependencies": {
-      "bus": "^0.0.1"
-    },
-    "name": "request"
-  },
-  "author": "jiamiu"
+  "author": "jiamiu",
+  "dependencies": {
+    "koa-body": "~1.2.1",
+    "koa-router": "~5.1.2",
+    "roof-bus": "~0.1.0"
+  }
 }

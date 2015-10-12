@@ -1,6 +1,6 @@
 # zero-request #
 
-Provide enhanced express router functions for relier module.
+Provide enhanced express router functionality for relier module.
 
 ## Usage ##
 
@@ -47,5 +47,5 @@ module.exports = {
 }
 ```
 
-We strongly suggest you use `bus.fire` or `bus.fcall` to trigger the action you want, this will decouple your system in an elegant way.
-When you use bus, you may need to know how respond module handle responds.
+We strongly suggest you to use `bus.fire` or `bus.fcall` to trigger the action you want, this will decouple your system in an elegant way.
+Know more a about [bus](http://github.com/sskyy/zero-bus).
