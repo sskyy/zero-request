@@ -9,6 +9,7 @@
   "dependencies": {
     "koa-body": "~1.2.1",
     "koa-router": "~5.2.0",
+    "koa-session": "~3.3.1",
     "roof-bus": "~0.1.0"
   }
 }
